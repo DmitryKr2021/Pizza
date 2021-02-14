@@ -1,0 +1,269 @@
+
+@media only screen and (max-width: 1200px) {
+   .header__container {
+      max-width: 95%;
+      min-width: 95%;
+      }
+   .header a {
+      font-size: 16px;
+      }
+      a.header__item {
+         padding: 26px 33px 26px 33px;
+      }
+      .menu__cards--text {
+         margin-left: 20px;
+      }
+      .content__wrap {
+         margin-left: 50px;
+         margin-top: 80px;
+      }
+      .contacts {
+         width: calc(100% - 30px);
+         margin-left: 15px;
+      }
+      .contacts__info {
+         max-width: 100%;
+         margin-left: 0;
+      }
+      .tomato {
+         display: none;
+      }
+
+   }
+   @media only screen and (max-width: 990px) {
+      .header__none {
+         display: none;
+      }
+      .contacts__content_wrap {
+         margin-top: 50px;
+      }
+      .sendvich {
+         display: flex;
+      }
+      a.header__item--tel {
+         margin-right: 80px;
+         margin-left: auto;
+      }
+      .hero__from {
+         font-size: 20px;
+      }
+      .hero__good {
+         font-size: 40px;
+      }
+      .hero__choose {
+         margin-top: 20px;
+         font-size: 18px;
+         padding: 10px;
+         padding-left: 50px;
+         padding-right: 50px;
+         font-weight: 600;
+      }
+
+      /*Стили для меню на узком экране*/
+      .header__container {
+         width: 100%;
+         max-width: 100%;
+         min-width: 100%;
+      }
+      .header__logo {
+         margin-left: 25px;
+      } 
+      .header__nav_media {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      position: absolute;
+      top: 70px;
+      width: 100vw;  
+      }
+      .header__nav_media a {
+         color: #000;
+         text-align: center;
+         font-size: 22px;
+         text-transform: capitalize;
+         transition: 0.3s;
+      }
+      .header__nav_media a:first-child {
+         margin-top: 50px;
+      } 
+      .header__nav_media a:nth-child(3) {
+         margin-bottom: 150px;
+      } 
+      .header__nav_media a:hover {
+         background-color: rgb(255, 162, 56);
+         color: #fff;
+      }
+      .header__nav_media .header__social a:hover {
+         background-color: transparent;
+      }
+      .header__social {
+         display: block;
+         position: absolute;
+         top: 300px;
+         left: 50%;
+         transform: translateX(-50%);
+      }
+   }
+
+   @media only screen and (max-width: 745px) {    
+      .hero__from {
+         font-size: 16px;
+      }
+      .hero__good {
+         font-size: 30px;
+      }
+      .hero__choose {
+         margin-top: 10px;
+         font-size: 14px;
+         padding: 8px;
+         padding-left: 30px;
+         padding-right: 30px;
+      }     
+      .menu__choose {
+         border-radius: 10px;
+      }
+      .menu__item {
+         width: 200px;
+      }
+      .menu__left {
+         border-bottom: 1px solid #bbb; 
+      }
+      .menu__left .menu__item:nth-child(2) {
+         border-right: none; 
+      }
+      .about {
+         position: relative;
+      }
+      .about .img {
+         position: absolute;
+         width: 100%;
+         height: 560px;
+         background-image: none;
+      }
+      .about .img img {
+         display: block;
+         width: auto;
+      }
+      .about .content {
+         position: relative;
+         background-color: transparent;
+         width: 90%;
+         margin-left: 15%;
+         padding-right: 30px;
+         margin-bottom: 100px;
+      }
+      .content__wrap {
+         margin-left: 0;
+         margin-top: 80px;
+      }
+      .content__text {
+         padding-right: 0px;   
+      }
+      .contacts {
+         top: 10px;
+         width: 100%;
+         margin-left: 0;
+      }    
+      .contacts__info {
+         margin-top: 10px;
+         width: 100%;
+         flex-direction: column-reverse;
+      }
+      .contacts__map {
+         width: 100%;
+         margin-left: 0;
+      }
+      .contacts__content {
+         width: 80%;
+         margin-left: 20%;
+      }
+      
+   }
+   @media only screen and (max-width: 575px) {
+      .header {
+         height: 50px;
+      }
+      .header logo {
+         padding: 10px 0px 20px 0px;
+      }
+      a.header__item--tel {
+         padding-top: 8px;
+         padding-bottom: 8px;
+         padding-left: 20px;
+         padding-right: 20px;
+         border-radius: 50px;
+         font-size: 15px;
+      }
+      .sendvich {
+         top: 8px;
+      }
+      .mypizza {
+         width: 50px;
+      }
+      .content__title {
+         font-size: 40px;
+      }
+   }
+
+   @media only screen and (max-width: 500px) {
+      a.header__item--tel {
+         padding-left: 10px;
+         padding-right: 10px;  
+      }
+      .hero__promo {
+         min-width: 100%;
+      }
+      .hero__from {
+         font-size: 16px;
+         font-weight: 800;
+      }
+      .hero__good {
+         font-size: 25px;
+         font-weight: 700;
+      }
+      .hero__choose {
+         margin-top: 5px;
+         font-size: 14px;
+         padding: 5px;
+         padding-left: 20px;
+         padding-right: 20px;
+         font-weight: 600;
+      }      
+      .menu__title {
+            margin-top: 80px;
+            font-size: 40px;
+      }
+      .menu__item {
+            width: 140px;
+      }
+      .contacts__content {
+         margin-left: 20px;
+      }
+   }
+
+   @media only screen and (max-width: 480px) {
+      .header__item--tel {
+         display: none;
+      }
+   } 
+      
+   
+   @media only screen and (max-width: 370px) {
+      .menu__item {
+         width: 100px;
+      }
+      .menu__label {
+         font-size: 14px;
+   }
+   .menu__cards {
+      max-width: 90%;
+   }
+   .choose__label {
+      font-size: 16px;
+      padding: 12px;
+   }
+   .buy {
+      padding: 10px;
+   }
+}
