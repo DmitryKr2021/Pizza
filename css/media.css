@@ -172,17 +172,28 @@
       }
       .contacts__map {
          width: 100%;
+         max-width: 100%;
          margin-left: 0;
       }
       .contacts__content {
          width: 80%;
          margin-left: 20%;
+         margin-bottom: 40px;
       }
       
    }
    @media only screen and (max-width: 575px) {
       .header {
          height: 50px;
+      }
+      .header__item--tel {
+         margin-top: -5px;
+      }
+      .mypizza {
+         margin-top: -5px;
+      }
+      .hero {
+         margin-top: 50px;
       }
       .header logo {
          padding: 10px 0px 20px 0px;
@@ -204,6 +215,21 @@
       .content__title {
          font-size: 40px;
       }
+      .pizzabox__info {
+         position: absolute;
+         width: 95%;
+      }
+      .slider__item {
+         height: 310px;
+       }  
+       .slider__item_inner {
+         flex-direction: row;
+       } 
+       .slider__item_img {
+         flex: 0 0 150px;
+         max-width: 150px;
+         height: 200px;
+       }
    }
 
    @media only screen and (max-width: 500px) {
@@ -247,23 +273,52 @@
          display: none;
       }
    } 
-      
+   @media only screen and (max-width: 450px) {
+      .pizzabox__full {
+         width: 100%;
+         margin-left: 0;
+      }
+      .pizzabox__full .pizzabox__close {
+         right: 10px;
+      }
+      .pizzabox__title {
+         font-size: 20px;
+      }
+      .pizzabox__table {
+         font-size: 15px;
+         color: black;
+      }
+
+   }  
    
    @media only screen and (max-width: 370px) {
+      .hero__promo {
+         top: calc(8vw);
+      }
       .menu__item {
          width: 100px;
       }
       .menu__label {
          font-size: 14px;
-   }
-   .menu__cards {
+      }
+      .menu__cards {
       max-width: 90%;
-   }
-   .choose__label {
-      font-size: 16px;
-      padding: 12px;
-   }
-   .buy {
-      padding: 10px;
-   }
+      }
+      .choose__label {
+        font-size: 16px;
+        padding: 12px;
+      }
+      .buy {
+        padding: 10px;
+      }
+      .add_, .remove_ {
+        padding-left: 3px;
+        padding-right: 3px;
+        line-height: 60%;
+      }
+      .pizzabox__table {
+         font-size: 12px;
+      }
+
+
 }

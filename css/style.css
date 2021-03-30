@@ -4,6 +4,19 @@ font-family: 'Roboto', sans-serif;
 */
 body, .container {
    overflow-x:hidden;
+   position: relative;
+}
+body::after {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   height: 100%;
+   background-color: #000;
+   opacity: .6;
+   display: none;
 }
 * {
    box-sizing: border-box;
@@ -79,28 +92,142 @@ a.header__item--tel:hover {
    margin-right: 20px;
    display: flex;
    flex-direction: column;
-   position: relative;
+   border-radius: 50px;
+}
+.pizzabox_nonactive {
+   background-color: rgb(139, 80, 80);
+   pointer-events: none;
 }
 .pizzabox:hover {
    cursor: pointer;
-}
-.pizzabox:hover + .pizzabox__info {
-   display: block;
 }
 .pizzabox img {
    width: 100%;
    height: auto;
 }
 .pizzabox__info {
-   display: none;
-   background-color: #fff;
    position: absolute;
+   width: 80%;
+   max-width: 500px;
+   border-radius: 30px;
    top: 80px;
+   left: 50%;
+   transform: translateX(-50%);
+   background-color: rgb(255, 162, 56);
+   font-family: 'Roboto', sans-serif;
+   color: #fff; 
+}
+.pizzabox__close {
+   display: inline-block;
+   color: #000;
+   line-height: 60%;
+   border-radius: 50%;
+   border: none;
+   font-size: 40px;
+   font-weight: 400;
+   padding: 10px;
+   background-color:#fff;
+   position: absolute;
+   top: 10px;
+   right: 10px;   
+   cursor: pointer;
+   transition: .3s;
+}
+.pizzabox__close:hover {
+   background-color: rgb(250, 200, 143);
+}
+.pizzabox__full .pizzabox__close {
+   top: -10px;
+   right: -10px;
+}
+.pizzabox__empty {
+   width: 70%;
+   margin-left: 15%;
+   padding: 50px;
+   font-size: 24px;
+   font-weight: 900;
+   text-align: center;
+   line-height: 150%;
+}
+.to_hide {
+   display: none;
+}
+.pizzabox__full {
+   width: 90%;
+   margin-left: 5%;
+   position: relative;
+}
+.pizzabox__title {
+   text-align: center;
+   font-size: 24px;
+   font-weight: 700;
+   margin: 20px;
+}
+.pizzabox__table {
+   width: 100%;
+   margin-bottom: 20px;
+}
+.pizzabox__table th {
+   color: #000;
+   text-align: center;
+}
+.pizzabox__table th:first-child {
+   padding: 5px 25px 5px 25px;
+}
+.pizzabox__table td {
+   text-align: center;
+   font-weight: 600;
+   vertical-align: middle;
+   padding: 5px;
+}
+.add_ {
+   color: green;
+   line-height: 90%;
+}
+.remove_ {
+   color: red;
+   padding-left: 8px;
+   padding-right: 8px;
+   line-height: 90%;
+}
+.trTotal {
+   color: red;
+}
+tr:hover {
+   background-color: rgb(250, 200, 143);
+   color: rgb(44, 1, 85);
+}
+td button {
+   background-color: #fff;
+   font-size: 30px;
+   cursor: pointer;
+}
+.pizzabox__order {
+   display: flex;
+   justify-content: center;
+   margin-bottom: 20px;
+}
+.pizzabox__order button {
+   border-radius: 25px;
+   border: none;
+   padding: 10px 30px 10px 30px;
+   font-weight: 600;
+   cursor: pointer;
+   box-shadow: 3px 3px 3px #501e01;
+   transition: all 0.2s ease 0s;
+}
+.pizzabox__order button:hover {
+   background-color: rgb(250, 200, 143);
+} 
+.pizzabox__order button:active {
+   transform: translate(3px, 3px);
+   box-shadow: none;
 }
 .hero {
    position: relative;
+   margin-top: 70px;
    width: 100%;
-   height: 100vh;
+   height: calc(100vw*94/200) ;
 }
 .hero__promo {
    display: inline-block;
@@ -314,10 +441,15 @@ a.header__item--tel:hover {
    border: none;
    border-radius: 50px;
    cursor: pointer;
-   transition: 0.3s;
+   box-shadow: 3px 3px 3px #501e01;
+   transition: all 0.2s ease 0s;
 }
 .buy:hover {
    background-color: rgba(221, 141, 66, 0.959);
+}
+.buy:active {
+   transform: translate(3px, 3px);
+   box-shadow: none;
 }
 .about {
    margin-top: 100px;
@@ -377,6 +509,8 @@ a.header__item--tel:hover {
 .contacts__map {
    background-color: rgb(248, 239, 190);
    height: 450px;
+   max-width: 500px;
+   min-width: 500px;
    overflow: hidden;
 }
 .contacts__content_wrap {
@@ -438,7 +572,6 @@ a.header__item--tel:hover {
 /*Сэндвич-меню*/
 .sendvich {
    display: none;
-   background: transparent;
    justify-content: center;
    align-items: center;
    width: 45px;
@@ -532,10 +665,9 @@ a.header__item--tel:hover {
    flex: 0 0 100px;
    max-width: 100px;
  }
- img {
+ .slider__item_img img {
    display: inline-block;
    height: auto;
-   *max-width: 100%;
    width: 100%;
  }
  /* стили для кнопок "вперед" и "назад" */
@@ -616,40 +748,157 @@ a.header__item--tel:hover {
  .slider__indicators li.active {
    background-color: #fff;
  }
- 
- .slider__item_1 {
-   background: linear-gradient(45deg, #085078 10%, #85d8ce 90%);
- }
- .slider__item_2 {
-   background: linear-gradient(to right, #dd1818, #333333);
- }
 
- .slider__item_3 {
-   background: linear-gradient(to right, #093028, #237a57);
- }
- .slider__item_4 {
-   background: linear-gradient(to right, #243B55, #141E30);
- }
- .slider__item_5 {
-   background: linear-gradient(45deg, #085078 10%, #85d8ce 90%);
- }
- 
 
- 
+ /***************************************************/
 
- @media (min-width: 576px) {
-   .slider__item {
-     height: 310px;
+ .spinner {
+   position: fixed;
+   top: 400px;
+   left: 43%;
+   transform: translateX(-50%);
+   width: 160px;
+   height: 160px;
+   flex-wrap: wrap;
+   animation: spin 2s linear forwards; 
+   z-index: 10;
+ }
+ .spinner_no {
+    display: none;
+ }
+ .spinner_yes {
+    display: flex;
+ }
+ .pizza-part {
+   width: 80px;
+   height: 80px;
+ }
+ .pizza-part-1 {
+   animation: pizza1 2s ease-in-out forwards;
+ }
+ .pizza-part-2 {
+   animation: pizza2 2s ease-in-out forwards;
+ }
+ .pizza-part-3 {
+   animation: pizza4 2s ease-in-out forwards;
+ }
+ .pizza-part-4 {
+   animation: pizza3 2s ease-in-out forwards;
+ }
+.pizza-stop {
+   animation-play-state: paused;
+}
+ /* animations */
+ @keyframes spin {
+   0% {
+     transform: rotateZ(0deg);
    }
-
-   .slider__item_inner {
-     flex-direction: row;
+   100% {
+     transform: rotateZ(360deg);
    }
-
-   .slider__item_img {
-     flex: 0 0 150px;
-     max-width: 150px;
-     height: 200px;
-   }
-
  }
+ 
+ @keyframes pizza1 {
+   0% {
+     transform: translate(-20%, -20%);
+     opacity: 0;
+   }
+   10% {
+     transform: translate(0%, 0%);
+     opacity: 1;
+   }
+   50% {
+     transform: translate(0%, 0%);
+     opacity: 1;
+   }
+   60% {
+     transform: translate(-20%, -20%);
+     opacity: 0;
+   }
+   100% {
+     transform: translate(-20%, -20%);
+     opacity: 0;
+   }
+ }
+ 
+ @keyframes pizza2 {
+   0% {
+     transform: translate(20%, -20%) rotateZ(90deg);
+     opacity: 0;
+   }
+   10% {
+     transform: translate(20%, -20%) rotateZ(90deg);
+     opacity: 0;
+   }
+   20% {
+     transform: translate(0%, 0%) rotateZ(90deg);
+     opacity: 1;
+   }
+   60% {
+     transform: translate(0%, 0%) rotateZ(90deg);
+     opacity: 1;
+   }
+   70% {
+     transform: translate(20%, -20%) rotateZ(90deg);
+     opacity: 0;
+   }
+   100% {
+     transform: translate(20%, -20%) rotateZ(90deg);
+     opacity: 0;
+   }
+ }
+ 
+ @keyframes pizza3 {
+   0% {
+     transform: translate(20%, 20%) rotateZ(180deg);
+     opacity: 0;
+   }
+   20% {
+     transform: translate(20%, 20%) rotateZ(180deg);
+     opacity: 0;
+   }
+   30% {
+     transform: translate(0%, 0%) rotateZ(180deg);
+     opacity: 1;
+   }
+   70% {
+     transform: translate(0%, 0%) rotateZ(180deg);
+     opacity: 1;
+   }
+   80% {
+     transform: translate(20%, 20%) rotateZ(180deg);
+     opacity: 0;
+   }
+   100% {
+     transform: translate(20%, 20%) rotateZ(180deg);
+     opacity: 0;
+   }
+ }
+ 
+ @keyframes pizza4 {
+   0% {
+     transform: translate(-20%, 20%) rotateZ(-90deg);
+     opacity: 0;
+   }
+   30% {
+     transform: translate(-20%, 20%) rotateZ(-90deg);
+     opacity: 0;
+   }
+   40% {
+     transform: translate(0%, 0%) rotateZ(-90deg);
+     opacity: 1;
+   }
+   80% {
+     transform: translate(0%, 0%) rotateZ(-90deg);
+     opacity: 1;
+   }
+   90% {
+     transform: translate(-20%, 20%) rotateZ(-90deg);
+     opacity: 0;
+   }
+   100% {
+     transform: translate(-20%, 20%) rotateZ(-90deg);
+     opacity: 0;
+   }
+ }
+ 

@@ -1,0 +1,130 @@
+.popup-order * {
+   font-family: 'Roboto', sans-serif;
+   box-sizing: border-box;
+}
+.popup-order {
+   width: 700px;
+   margin: 0 auto;
+   background-color: #fff;
+   border-radius: 20px;
+   position: absolute;
+   top: 80px;
+   left: calc((100% - 700px)/2);
+}
+.popup-order__close {
+   border: none;
+   position: relative;
+   top: 10px;
+   left: 650px;
+   font-size: 35px;
+   color: transparent;
+   background-color: transparent;
+   cursor: pointer;
+   transition: .2s;
+}
+.popup-order__close::before {
+   content: '.';
+   position: absolute;
+   top: 0;
+   left: 0;
+   border-left: 2px solid #999;
+   transform: rotate(45deg);
+}
+.popup-order__close::after {
+   content: '.';
+   position: absolute;
+   top: -7px;
+   left: 0px;
+   border-left: 2px solid #999;
+   transform: rotate(-45deg);
+}
+.popup-order__close:hover {
+   transform: scale(1.1);
+}
+.popup-order__wrapper {
+   width: 100%;
+   margin: 50px auto;
+}
+.popup-order__title h2 {
+   text-align: center;
+   font-size: 45px;
+   font-weight: 800;
+}
+.popup-order__text {
+   width: 50%;
+   margin: 25px auto;
+   text-align: center;
+   font-size: 25px;
+}
+.basket {
+   width: 40%;
+   margin-left: 30%;
+}
+.basket img {
+   width: 100%;
+}
+.popup-order__form {
+   display: flex;
+   flex-direction: column;
+}
+.popup-order__form > * {
+   width: 300px;
+   margin-left: auto;
+   margin-right: auto;
+   padding: 20px;
+   border-radius: 50px;
+   border: none;
+   margin-top: 5px;
+   background-color: #eee;
+}
+.popup-order__form > *:focus {
+   border: 1px solid rgb(255, 173, 79);
+   padding: 19px;
+}
+.popup-order__submit {
+   background-color: rgb(255, 173, 79);
+   cursor: pointer;
+   color: white;
+   font-size: 20px;
+   font-weight: 800;
+   transition: .3s;
+}
+.popup-order__submit:hover {
+   background-color: rgb(216, 23, 10);
+}
+
+@media only screen and (max-width: 700px) {
+   .popup-order {
+      width: 100%;
+      left: 0;
+   }
+   .popup-order__title h2 {
+      font-size: 35px;
+   }
+   .popup-order__text {
+      width: 70%;
+   }
+   .popup-order__close {
+      position: relative;
+      top: 10px;
+      left: 90%;
+   }
+}
+@media only screen and (max-height: 900px) {
+   .popup-order {
+      top: 0;
+      transform: scale(.8);
+   }
+}
+@media only screen and (max-height: 600px) {
+   .popup-order {
+      top: -20px;
+   }
+   .basket {
+      display: none;
+   }
+   .spinner {   
+      top: 200px;
+      left: 40%;
+    }
+}
