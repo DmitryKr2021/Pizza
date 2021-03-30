@@ -1,5 +1,5 @@
-# Pizza
 ## Online pizza store. 
+![korobka-pitstsy](https://user-images.githubusercontent.com/79040401/112958159-dc073780-914a-11eb-9d37-24732d0a5934.jpg)
 
 The layout is taken here:
 https://www.youtube.com/watch?v=Lap_G3hI7cc
