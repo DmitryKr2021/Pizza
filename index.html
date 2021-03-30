@@ -11,8 +11,9 @@
    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
    <link rel="stylesheet" href="css/normalize.css">
    <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="css/popup-order.css">
    <link rel="stylesheet" href="css/media.css">
-   <link rel="stylesheet" href="css/glide.core.min.css">
+   <!--link href="img/pizza.png" rel="icon" type="image/x-icon"/-->
 </head>
 
 <body>
@@ -100,18 +101,77 @@
             </nav>
             <a href="tel:+7(999)9999999" class="header__item--tel">+7&nbsp;(999)&nbsp;999-99-99</a>
             <div class="mypizza">
-               <div class="pizzabox">
+               <button class="pizzabox">
                   <img src="img/pizzabox.png" alt="pizzabox">
-               </div>
-               <div class="pizzabox__info">
+               </button>
+               <div class="pizzabox__info to_hide">
                   <div class="pizzabox__empty">
+                     <button class="pizzabox__close">&#215;</button>
                      <p>Ваша коробка пуста</p>
                   </div>
-                  <div class="pizzabox__full">
-                     <p>В вашей коробке:</p>
-                     <p>Итого: <span class="cost">150 </span><span class="rub">&#8381;</span></p>
+                  <div class="pizzabox__full to_hide">
+                     <button class="pizzabox__close">&#215;</button>
+                     <p class="pizzabox__title">В вашей коробке:</p>
+                     <table class="pizzabox__table">
+                        <tbody>
+                           <tr>
+                              <th>Название</th>
+                              <th>Размер</th>
+                              <th>Кол-во</th>
+                              <th>Сумма</th>
+                              <th></th>
+                              <th></th>
+                           </tr>
+                        </tbody>
+                     </table>
+                     <div class="pizzabox__order">
+                        <button>Заказать</button>
+                     </div>
                   </div>
                </div>
+
+               <div class="spinner">
+                  <img src="img/pizza_slice.png" class="pizza-part pizza-part-1" />
+                  <img src="img/pizza_slice.png" class="pizza-part pizza-part-2" />
+                  <img src="img/pizza_slice.png" class="pizza-part pizza-part-3" />
+                  <img src="img/pizza_slice.png" class="pizza-part pizza-part-4" />
+               </div>
+
+                <!--Popup-order-->
+      <div class="popup-order to_hide">
+         <button class="popup-order__close"></button>
+         <div class="popup-order__wrapper">
+            <div class="popup-order__title">
+               <h2>
+                  Заполните форму
+               </h2>
+            </div>
+            <div class="popup-order__text">
+               <p>
+                  Мы привезем вам горячую пиццу за 50 минут
+               </p>
+            </div>
+            <div class="basket">
+               <img src="img/korobka-dlya-pitstsy.jpg" alt="basket">
+            </div>
+            <div class="form">
+               <form action="#" id='form' class="popup-order__form">
+                  <input type="text" placeholder="Имя" required='required'>
+                  <input type="text" placeholder="Телефон" required='required'>
+                  <input type="text" placeholder="Адрес" required='required'>
+                  <select name="pade" id="" class="popup-order__pade">
+                     <option value="cash" selected="selected">Оплата наличными</option>
+                     <option value="card">Оплата по карте</option>
+                     <option value="Web-money">Оплата через Web-money</option>
+                  </select>
+                  <input type='submit'  
+                  class="popup-order__submit">
+               </form>             
+            </div>
+         </div>
+      </div>
+      <!--/popup-order-->
+
             </div>
             <!---Сэндвич-меню -->
             <div class="sendvich">
@@ -173,28 +233,28 @@
             <div class="menu__left">
                <div class="menu__item">
                   <input type="radio" name="item" value="any" id='any' checked>
-                  <label deadline='any' for="any" class="menu__label">все</label>
+                  <label filter='any' for="any" class="menu__label">все</label>
                </div>
                <div class="menu__item">
                   <input type="radio" name="item" value="mush" id="mush">
-                  <label deadline='mush' for="mush" class="menu__label">грибные</label>
+                  <label filter='mushroom' for="mush" class="menu__label">грибные</label>
                </div>
             </div>
             <div class="menu__right">
                <div class="menu__item">
                   <input type="radio" name="item" value="meet" id="meet">
-                  <label deadline='meet' for="meet" class="menu__label">мясные</label>
+                  <label filter='meet' for="meet" class="menu__label">мясные</label>
                </div>
                <div class="menu__item">
                   <input type="radio" name="item" value="cheese" id="cheese">
-                  <label deadline='cheese' for="cheese" class="menu__label">сырные</label>
+                  <label filter='cheese' for="cheese" class="menu__label">сырные</label>
                </div>
             </div>
          </div>
          <!--/menu__choose-->
 
          <div class="menu__wrap">
-            <div class="menu__cards" name_='salyamy'>
+            <div filter='meet' class="menu__cards" name_='salyamy'>
                <div class="img"><img src="img/1.png" alt="#"></div>
                <div class="menu__cards--text">
                   <div class="menu__cards--title">Салями</div>
@@ -214,7 +274,7 @@
                </div>
             </div>
 
-            <div class="menu__cards" name_='hit'>
+            <div filter='meet' class="menu__cards" name_='hit'>
                <div class="img"><img src="img/2.png" alt="#"></div>
                <div class="menu__cards--text">
                   <div class="menu__cards--title">Хит</div>
@@ -234,7 +294,7 @@
                </div>
             </div>
 
-            <div class="menu__cards" name_='ham_mushrooms'>
+            <div filter='mushroom' class="menu__cards" name_='ham_mushrooms'>
                <div class="img"><img src="img/3.png" alt="#"></div>
                <div class="menu__cards--text">
                   <div class="menu__cards--title">Ветчина-грибы</div>
@@ -254,7 +314,7 @@
                </div>
             </div>
 
-            <div class="menu__cards" name_='carbonara'>
+            <div filter='meet' class="menu__cards" name_='carbonara'>
                <div class="img"><img src="img/4.png" alt="#"></div>
                <div class="menu__cards--text">
                   <div class="menu__cards--title">Карбонара</div>
@@ -274,7 +334,7 @@
                </div>
             </div>
 
-            <div class="menu__cards" name_='firm'>
+            <div filter='cheese' class="menu__cards" name_='firm'>
                <div class="img"><img src="img/5.png" alt="#"></div>
                <div class="menu__cards--text">
                   <div class="menu__cards--title">Фирменная</div>
@@ -294,7 +354,7 @@
                </div>
             </div>
 
-            <div class="menu__cards" name_='assorty'>
+            <div filter='mushroom' class="menu__cards" name_='assorty'>
                <div class="img"><img src="img/6.png" alt="#"></div>
                <div class="menu__cards--text">
                   <div class="menu__cards--title">Ассорти</div>
@@ -315,7 +375,7 @@
                </div>
             </div>
 
-            <div class="menu__cards" name_='L01'>
+            <div filter='cheese' class="menu__cards" name_='L01'>
                <div class="img"><img src="img/7.png" alt="#"></div>
                <div class="menu__cards--text">
                   <div class="menu__cards--title">Л-01</div>
@@ -335,7 +395,7 @@
                </div>
             </div>
 
-            <div class="menu__cards" name_='three_cheese'>
+            <div filter='cheese' class="menu__cards" name_='three_cheese'>
                <div class="img"><img src="img/8.png" alt="#"></div>
                <div class="menu__cards--text">
                   <div class="menu__cards--title">Три сыра</div>
@@ -355,7 +415,7 @@
                </div>
             </div>
 
-            <div class="menu__cards" name_='meat'>
+            <div filter='meet' class="menu__cards" name_='meat'>
                <div class="img"><img src="img/9.png" alt="#"></div>
                <div class="menu__cards--text">
                   <div class="menu__cards--title">Мясная</div>
@@ -377,6 +437,7 @@
          </div>
          <!--/menu__wrap-->
       </main>
+      
       <section id="to_2" class="about">
          <div class="img"><img src="img/bg.jpg" alt="#"> </div>
          <div class="content">
@@ -392,7 +453,7 @@
          <h2 class="contacts__title">Контакты</h2>
          <div class="contacts__info">
             <div class="contacts__map">
-               <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A655b1644bb93b06ebcfd401d5fc9b8e3acf51bf9dbfd9219c22c45b014bece75&amp;width=600&amp;height=450&amp;lang=ru_RU&amp;scroll=true"></script>
+               <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A655b1644bb93b06ebcfd401d5fc9b8e3acf51bf9dbfd9219c22c45b014bece75&amp;height=450&amp;lang=ru_RU&amp;scroll=true"></script>
             </div>
             <div class="contacts__content">
                <div class="contacts__content_wrap">
