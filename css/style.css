@@ -21,6 +21,9 @@ body::after {
 * {
    box-sizing: border-box;
 }
+.no-scroll {
+   overflow: hidden;
+}
 :root {
    --header-height: 70px; 
    --fontsize: 19px;
@@ -48,8 +51,10 @@ body::after {
 .header__nav {
    display: inline-flex;
    margin-left: auto;
+   max-height: 100vh;
+   overflow-y: auto;
+   z-index: 20;
 }
-
 a.header__item:hover {
    color: #000;
    background-color: #fff;  
@@ -116,6 +121,7 @@ a.header__item--tel:hover {
    background-color: rgb(255, 162, 56);
    font-family: 'Roboto', sans-serif;
    color: #fff; 
+   z-index: 5;
 }
 .pizzabox__close {
    display: inline-block;
@@ -272,6 +278,10 @@ td button {
 .hero__choose:hover {
    background-color: rgb(241, 36, 28);
 }
+.hero__choose:active {
+   transform: scale(.9);
+}
+
 .menu {
    background-color: #fff;
    position: relative;
@@ -356,6 +366,7 @@ td button {
    padding-bottom: 50px;
    flex-grow: 1;
    transition: 0.3s;
+   z-index: 5;
 }
 .menu__cards:hover {
    cursor: pointer;
@@ -754,13 +765,15 @@ td button {
 
  .spinner {
    position: fixed;
-   top: 400px;
+   top: 300px;
    left: 43%;
    transform: translateX(-50%);
    width: 160px;
    height: 160px;
    flex-wrap: wrap;
    animation: spin 2s linear forwards; 
+ }
+ .spinner_z {
    z-index: 10;
  }
  .spinner_no {
@@ -773,6 +786,7 @@ td button {
    width: 80px;
    height: 80px;
  }
+ 
  .pizza-part-1 {
    animation: pizza1 2s ease-in-out forwards;
  }
@@ -785,9 +799,7 @@ td button {
  .pizza-part-4 {
    animation: pizza3 2s ease-in-out forwards;
  }
-.pizza-stop {
-   animation-play-state: paused;
-}
+ 
  /* animations */
  @keyframes spin {
    0% {
