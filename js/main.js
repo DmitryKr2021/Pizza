@@ -5,7 +5,9 @@
    const sendv = document.querySelector('.sendvich');
    const nav_ = document.querySelector('.header__nav');
    const spinner = document.querySelector('.spinner');
-   const pizzaParts = document.querySelectorAll('.pizza-part');
+   const body = document.querySelector('body');
+   
+   spinner.classList.remove('spinner_z');
    pizzaStop();//отключить спиннер
 
    sendv.onclick = function () {
@@ -259,6 +261,7 @@
       } else {
          toShowModal();
       };
+      spinner.classList.remove('spinner_z');
       sendv.classList.toggle('pizzabox_nonactive');
       pizzaBoxInfo.classList.toggle('to_hide');
       if (all) {
@@ -280,12 +283,14 @@
       let sss = document.head.appendChild(document.createElement('style'));
       sss.innerHTML = "body::after {display: none}";
       infoShow = false;
+      body.classList.remove('no-scroll');
    }
 
    function toShowModal() {
       let styleBody = document.head.appendChild(document.createElement('style'));
       styleBody.innerHTML = "body::after {display: block}";
       infoShow = true;
+      body.classList.add('no-scroll');
    }
    //Оформить заказ
    
@@ -293,32 +298,30 @@
    const popupOrder = document.querySelector('.popup-order');
    const popupOrderSubmit = document.querySelector('.popup-order__submit');
    const popupOrderClose = document.querySelector('.popup-order__close');
+   const popupSucsess = document.querySelector('.popup-sucsess');
+   const popupSucsessClose = document.querySelector('.popup-sucsess__close');
 
    function pizzaStop() {//отключить спиннер
       spinner.classList.add('spinner_no');
-      spinner.classList.add('pizza-stop');
-      for (let pP of pizzaParts) {
-         pP.classList.add('pizza-stop')
-      };
+      spinner.classList.remove('spinner_z');
    };
    function pizzaGo() {//запустить спиннер
-      for (let pP of pizzaParts) {
-         pP.classList.remove('pizza-stop')
-      };
-      spinner.classList.remove('pizza-stop');
       spinner.classList.remove('spinner_no');
       spinner.classList.add('spinner_yes');
+      spinner.classList.add('spinner_z');
    }
 
    pizzaBoxOrder.onclick = () => {
       popupOrder.classList.remove('to_hide');
       pizzaBoxInfo.classList.add('to_hide');
+      pizzaBox.classList.add('pizzabox_nonactive');   
    }
 
    popupOrderClose.onclick = () => {
       popupOrder.classList.add('to_hide');
       toHideModal();
       sendv.classList.remove('pizzabox_nonactive');
+      pizzaBox.classList.remove('pizzabox_nonactive');
    }
 
    popupOrderSubmit.onclick = () => {
@@ -327,9 +330,14 @@
 
       setTimeout(function() {
          popupOrder.classList.add('to_hide');
-         toHideModal();
-         sendv.classList.remove('pizzabox_nonactive');
+         popupSucsess.classList.remove('to_hide');
       }, 2000);      
    }   
 
+   popupSucsessClose.onclick = () => {
+      popupSucsess.classList.add('to_hide');
+      toHideModal();
+      pizzaBox.classList.remove('pizzabox_nonactive');
+      sendv.classList.remove('pizzabox_nonactive');
+   }
 });
