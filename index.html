@@ -6,7 +6,8 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Пицца</title>
    <link rel="preconnect" href="https://fonts.gstatic.com">
-   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Roboto:wght@300&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Roboto:wght@300&display=swap"
+      rel="stylesheet">
    <link rel="preconnect" href="https://fonts.gstatic.com">
    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
    <link rel="stylesheet" href="css/normalize.css">
@@ -137,42 +138,55 @@
                   <img src="img/pizza_slice.png" class="pizza-part pizza-part-4" />
                </div>
 
-                <!--Popup-order-->
-      <div class="popup-order to_hide">
-         <button class="popup-order__close"></button>
-         <div class="popup-order__wrapper">
-            <div class="popup-order__title">
-               <h2>
-                  Заполните форму
-               </h2>
-            </div>
-            <div class="popup-order__text">
-               <p>
-                  Мы привезем вам горячую пиццу за 50 минут
-               </p>
-            </div>
-            <div class="basket">
-               <img src="img/korobka-dlya-pitstsy.jpg" alt="basket">
-            </div>
-            <div class="form">
-               <form action="#" id='form' class="popup-order__form">
-                  <input type="text" placeholder="Имя" required='required'>
-                  <input type="text" placeholder="Телефон" required='required'>
-                  <input type="text" placeholder="Адрес" required='required'>
-                  <select name="pade" id="" class="popup-order__pade">
-                     <option value="cash" selected="selected">Оплата наличными</option>
-                     <option value="card">Оплата по карте</option>
-                     <option value="Web-money">Оплата через Web-money</option>
-                  </select>
-                  <input type='submit'  
-                  class="popup-order__submit">
-               </form>             
-            </div>
-         </div>
-      </div>
-      <!--/popup-order-->
-
-            </div>
+               <!--Popup-order-->
+               <div class="popup-order to_hide">
+                  <button class="popup-order__close"></button>
+                  <div class="popup-order__wrapper">
+                     <div class="popup-order__title">
+                        <h2>
+                           Заполните форму
+                        </h2>
+                     </div>
+                     <div class="popup-order__text">
+                        <p>
+                           Мы привезем вам горячую пиццу за 50 минут
+                        </p>
+                     </div>
+                     <div class="basket">
+                        <img src="img/korobka-dlya-pitstsy.jpg" alt="basket">
+                     </div>
+                     <div class="form">
+                        <form action="#" id='form' class="popup-order__form">
+                           <input type="text" placeholder="Имя" required='required'>
+                           <input type="text" placeholder="Телефон" required='required'>
+                           <input type="text" placeholder="Адрес" required='required'>
+                           <select name="pade" id="" class="popup-order__pade">
+                              <option value="cash" selected="selected">Оплата наличными</option>
+                              <option value="card">Оплата по карте</option>
+                              <option value="Web-money">Оплата через Web-money</option>
+                           </select>
+                           <input type='submit' class="popup-order__submit">
+                        </form>
+                     </div>
+                  </div>
+               </div>
+               <!--/popup-order-->
+               <div class="popup-sucsess to_hide">
+                  <button class="popup-sucsess__close"></button>
+                  <div class="popup-sucsess__wrapper">
+                     <div class="popup-sucsess__title">
+                        <h2>
+                           Успешно отправлено
+                        </h2>
+                     </div>
+                     <div class="popup-sucsess__text">
+                        <p>
+                           Мы уже начали готовить Вашу пиццу
+                        </p>
+                     </div>
+                  </div>   
+               </div>  
+            </div><!--/mypizza-->
             <!---Сэндвич-меню -->
             <div class="sendvich">
                <input type="checkbox" class="menu-btn">
@@ -181,6 +195,7 @@
          </div>
          <!--/header__container-->
       </header>
+
       <div class="hero">
          <div class="slider">
             <div class="slider__wrapper">
@@ -216,15 +231,15 @@
             </div>
          </div>
          <!--/slider-->
-            <div class="hero__promo">
-               <div class="hero__from">
-                  от итальянского повара
-               </div>
-               <h1 class="hero__good">
-                  Лучшая пицца <br> в Москве
-               </h1>
-               <a href="#to_1" class="hero__choose">Выбрать</a>
+         <div class="hero__promo">
+            <div class="hero__from">
+               от итальянского повара
             </div>
+            <h1 class="hero__good">
+               Лучшая пицца <br> в Москве
+            </h1>
+            <a href="#to_1" class="hero__choose">Выбрать</a>
+         </div>
       </div>
       <!--/hero-->
       <main class="menu">
@@ -258,7 +273,8 @@
                <div class="img"><img src="img/1.png" alt="#"></div>
                <div class="menu__cards--text">
                   <div class="menu__cards--title">Салями</div>
-                  <div class="menu__cards--item">Салями, картофель и морковь, огурцы маринованные, моцарелла, цыпленок, ветчина и французский соус</div>
+                  <div class="menu__cards--item">Салями, картофель и морковь, огурцы маринованные, моцарелла, цыпленок,
+                     ветчина и французский соус</div>
                </div>
                <div class="menu__cards--size">
                   <input type="radio" name="size1" value="35" id='35-1' checked>
@@ -278,7 +294,8 @@
                <div class="img"><img src="img/2.png" alt="#"></div>
                <div class="menu__cards--text">
                   <div class="menu__cards--title">Хит</div>
-                  <div class="menu__cards--item">Картофель и морковь, огурцы маринованные, моцарелла, цыпленок, ветчина и французский соус</div>
+                  <div class="menu__cards--item">Картофель и морковь, огурцы маринованные, моцарелла, цыпленок, ветчина
+                     и французский соус</div>
                </div>
                <div class="menu__cards--size">
                   <input type="radio" name="size2" value="35" id='35-2' checked>
@@ -298,7 +315,8 @@
                <div class="img"><img src="img/3.png" alt="#"></div>
                <div class="menu__cards--text">
                   <div class="menu__cards--title">Ветчина-грибы</div>
-                  <div class="menu__cards--item">Салями, картофель и морковь, огурцы маринованные, моцарелла, цыпленок, ветчина и французский соус</div>
+                  <div class="menu__cards--item">Салями, картофель и морковь, огурцы маринованные, моцарелла, цыпленок,
+                     ветчина и французский соус</div>
                </div>
                <div class="menu__cards--size">
                   <input type="radio" name="size3" value="35" id='35-3' checked>
@@ -318,7 +336,8 @@
                <div class="img"><img src="img/4.png" alt="#"></div>
                <div class="menu__cards--text">
                   <div class="menu__cards--title">Карбонара</div>
-                  <div class="menu__cards--item">Салями, картофель и морковь, огурцы маринованные, моцарелла, цыпленок, ветчина и французский соус</div>
+                  <div class="menu__cards--item">Салями, картофель и морковь, огурцы маринованные, моцарелла, цыпленок,
+                     ветчина и французский соус</div>
                </div>
                <div class="menu__cards--size">
                   <input type="radio" name="size4" value="35" id='35-4' checked>
@@ -379,7 +398,8 @@
                <div class="img"><img src="img/7.png" alt="#"></div>
                <div class="menu__cards--text">
                   <div class="menu__cards--title">Л-01</div>
-                  <div class="menu__cards--item">Томаты, моцарелла, цыпленок, ветчина и французский соус, секректный ингредиент</div>
+                  <div class="menu__cards--item">Томаты, моцарелла, цыпленок, ветчина и французский соус, секректный
+                     ингредиент</div>
                </div>
                <div class="menu__cards--size">
                   <input type="radio" name="size7" value="35" id='35-7' checked>
@@ -419,7 +439,8 @@
                <div class="img"><img src="img/9.png" alt="#"></div>
                <div class="menu__cards--text">
                   <div class="menu__cards--title">Мясная</div>
-                  <div class="menu__cards--item">Курица, говядина, сливочный соус, салями, огурцы маринованные, томаты, грибы, бекон</div>
+                  <div class="menu__cards--item">Курица, говядина, сливочный соус, салями, огурцы маринованные, томаты,
+                     грибы, бекон</div>
                </div>
                <div class="menu__cards--size">
                   <input type="radio" name="size9" value="35" id='35-9' checked>
@@ -437,13 +458,14 @@
          </div>
          <!--/menu__wrap-->
       </main>
-      
+
       <section id="to_2" class="about">
          <div class="img"><img src="img/bg.jpg" alt="#"> </div>
          <div class="content">
             <div class="content__wrap">
                <h2 class="content__title">О нас</h2>
-               <div class="content__text">Доставим вам горячую пиццу менее чем за час или пицца бесплатно. Мы готовим пиццу только из свежих продуктов. Каждый день мы покупаем свежие овощи, грибы и мясо.</div>
+               <div class="content__text">Доставим вам горячую пиццу менее чем за час или пицца бесплатно. Мы готовим
+                  пиццу только из свежих продуктов. Каждый день мы покупаем свежие овощи, грибы и мясо.</div>
             </div>
             <!---/content__wrap-->
          </div>
@@ -453,7 +475,9 @@
          <h2 class="contacts__title">Контакты</h2>
          <div class="contacts__info">
             <div class="contacts__map">
-               <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A655b1644bb93b06ebcfd401d5fc9b8e3acf51bf9dbfd9219c22c45b014bece75&amp;height=450&amp;lang=ru_RU&amp;scroll=true"></script>
+               <script type="text/javascript" charset="utf-8" async
+                  src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A655b1644bb93b06ebcfd401d5fc9b8e3acf51bf9dbfd9219c22c45b014bece75&amp;height=450&amp;lang=ru_RU&amp;scroll=true">
+               </script>
             </div>
             <div class="contacts__content">
                <div class="contacts__content_wrap">
