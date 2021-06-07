@@ -10,3 +10,5 @@ Compared to the original, improvements have been made:
 - improved pizza size selection buttons
 - added a shopping cart and scripts for working with it
 - added card animation
+
+Deployed on https://new-pizza.netlify.app/ 
